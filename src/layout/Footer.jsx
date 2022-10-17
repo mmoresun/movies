@@ -13,9 +13,9 @@ const Footer = () => {
                         <div className="col l4 offset-l2 s12">
                             <h5 className="white-text">My another projects:</h5>
                             <ul>
-                                <li><a className="grey-text text-lighten-3" href="#!">Cute Todo List</a></li>
-                                <li><a className="grey-text text-lighten-3" href="#!">City Quiz</a></li>
-                                <li><a className="grey-text text-lighten-3" href="#!">Sizl - dark kitchen, food delivery</a></li>
+                                <li><a className="grey-text text-lighten-3" href="https://mmoresun.github.io/todolist/">Cute Todo List</a> (React.js, Redux)</li>
+                                <li><a className="grey-text text-lighten-3" href="https://mmoresun.github.io/cityquiz/">City Quiz</a> (React.js, Bootstrap)</li>
+                                <li><a className="grey-text text-lighten-3" href="https://mmoresun.github.io/sizl-com/">Sizl - dark kitchen, food delivery</a> (HTML, CSS, JS)</li>
                             </ul>
                         </div>
                     </div>
