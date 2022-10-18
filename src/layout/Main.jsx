@@ -1,55 +1,56 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import MovieList from '../components/MovieList';
 import Preloader from '../components/Preloader';
 import Search from '../components/Search';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-class Main extends React.Component {
+const Main = () => {
 
-    state = {
+    const [movies, setMovies] = useState('');
+    const [loading, setLoading] = useState(true);
 
-        movies: [],
-        loading: true,
+    const handleSearch = (searchString, searchType = 'all') => {
+        setLoading(true)
 
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchString}${searchType !== 'all' ? `&type=${searchType}` : ''}`)
+            .then(response => response.json())
+            .then((data) => {
+                setMovies(data.Search);
+                setLoading(false)
+            }
+
+            )
+            .catch((err) => {
+                console.log(err);
+                setLoading(false);
+            })
     }
 
-    componentDidMount() {
+    useEffect(() => {
+
         fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
             .then(response => response.json())
-            .then(data => this.setState({ movies: data.Search, loading: false }))
-            .catch((err) => {
-                console.error(err);
-                this.setState({ loading: false })
+            .then((data) => {
+                setMovies(data.Search);
+                setLoading(false)
             })
-    }
-
-    handleSearch = (searchString, searchType = 'all') => {
-        this.setState({ loading: true })
-        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchString}${searchType != 'all' ? `&type=${searchType}` : ''}`)
-            .then(response => response.json())
-            .then(data => this.setState({ movies: data.Search, loading: false }))
             .catch((err) => {
-                console.error(err);
-                this.setState({ loading: false })
+                console.log(err);
+                setLoading(false)
             })
+    }, [])
 
-    }
+    return (
 
-    render() {
+        <div className='container content'>
 
-        const { movies, loading } = this.state;
+            <Search handleSearch={handleSearch} />
 
-        return (
+            {loading ? <h5><Preloader /></h5> : <MovieList movies={movies} />}
 
-            <div className='container content'>
+        </div>)
 
-                <Search handleSearch={this.handleSearch} />
-
-                {loading ? <h5><Preloader /></h5> : <MovieList movies={this.state.movies} />}
-
-            </div>)
-    }
 
 }
 
