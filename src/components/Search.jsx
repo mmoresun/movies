@@ -9,12 +9,6 @@ const Search = (props) => {
     const [search, setSearch] = useState('');
     const [type, setType] = useState('all');
 
-    // state = {
-    //     search: '',
-    //     type: 'all'
-
-    // }
-
     const handleKeyDown = (e) => {
 
         if (e.key === 'Enter') {

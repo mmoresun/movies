@@ -18,9 +18,7 @@ const Main = () => {
             .then((data) => {
                 setMovies(data.Search);
                 setLoading(false)
-            }
-
-            )
+            })
             .catch((err) => {
                 console.log(err);
                 setLoading(false);
@@ -44,14 +42,9 @@ const Main = () => {
     return (
 
         <div className='container content'>
-
             <Search handleSearch={handleSearch} />
-
             {loading ? <h5><Preloader /></h5> : <MovieList movies={movies} />}
-
         </div>)
-
-
 }
 
 export default Main;
