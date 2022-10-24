@@ -1,7 +1,6 @@
 
 import Movie from './Movie';
 
-
 const MovieList = (props) => {
 
     const { movies = [] } = props;

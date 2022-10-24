@@ -14,6 +14,7 @@ const Footer = () => {
                             <h5 className="white-text">My another projects:</h5>
                             <ul>
                                 <li><a className="grey-text text-lighten-3" href="https://mmoresun.github.io/todolist/">Cute Todo List</a> (React.js, Redux)</li>
+                                <li><a className="grey-text text-lighten-3" href="https://mmoresun.github.io/live-clock/">World live Clock</a> (React.js, REST API)</li>
                                 <li><a className="grey-text text-lighten-3" href="https://mmoresun.github.io/cityquiz/">City Quiz</a> (React.js, Bootstrap)</li>
                                 <li><a className="grey-text text-lighten-3" href="https://mmoresun.github.io/sizl-com/">Sizl - dark kitchen, food delivery</a> (HTML, CSS, JS)</li>
                             </ul>

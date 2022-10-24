@@ -27,7 +27,7 @@ const Main = () => {
 
     useEffect(() => {
 
-        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=armageddon`)
             .then(response => response.json())
             .then((data) => {
                 setMovies(data.Search);

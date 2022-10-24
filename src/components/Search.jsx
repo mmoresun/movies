@@ -6,7 +6,7 @@ const Search = (props) => {
         handleSearch = Function.prototype,
     } = props;
 
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState('armageddon');
     const [type, setType] = useState('all');
 
     const handleKeyDown = (e) => {
@@ -23,7 +23,6 @@ const Search = (props) => {
         handleSearch(search, e.target.dataset.type);
     }
 
-
     return (
         <div className="row">
             <div className="col s12">
@@ -32,7 +31,7 @@ const Search = (props) => {
                         placeholder='Search by movie title'
                         type='search'
                         className="validate"
-                        value={search}
+                        value={search}                        
                         onChange={(e) => setSearch(e.target.value)}
                         onKeyDown={handleKeyDown}
                     />
